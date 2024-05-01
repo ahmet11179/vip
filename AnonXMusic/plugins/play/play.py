@@ -36,6 +36,7 @@ from config import BANNED_USERS, lyrical
             "voynatforce",
             "coynatforce",
             "cvoynatforce",
+            "play",
         ]
     )
     & filters.group
