@@ -14,7 +14,9 @@
 -------------------
 
 - /sudoekle - Sudo kullanıcı ekle .
+ 
 - /sudosil - Sudo kullanıcı sil .
+
 - /sudolist - Sudo kullanıcı listesi .
 
 - /reklam - Gruplara Reklam Atar !
@@ -40,6 +42,8 @@
 - /aktifvideo - Aktif videolu sohbetleri görün !
 
 - /hiztest - Botun hızını test edin !
+
+- /istatistik - Botun İstatistiklerine Göz Atın .
 
 - /ping - Botun pingine göz atın !
 
