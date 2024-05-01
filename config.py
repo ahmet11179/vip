@@ -13,6 +13,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001881565361"))
 OWNER_ID = int(getenv("OWNER_ID", 5931622575))
+SAHİB= getenv("SAHİB", "https://t.me/Cankabusunefendisi")
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/AHMET1346z/Sonsuz",
