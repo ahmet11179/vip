@@ -32,8 +32,5 @@ def private_panel(_):
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
             InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
         ],
-        [
-            InlineKeyboardButton(text="✚  ᴋᴀʏɴᴀᴋ ᴋᴏᴅᴜ  ", url="https://www.youtube.com/@EpikTv87"),
-        ],
     ]
     return buttons
