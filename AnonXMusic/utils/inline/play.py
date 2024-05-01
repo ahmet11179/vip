@@ -1,4 +1,5 @@
 import math
+import config
 
 from pyrogram.types import InlineKeyboardButton
 
@@ -54,6 +55,9 @@ def stream_markup_timer(_, chat_id, played, dur):
         bar = "—————————◉"
     buttons = [
         [
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
+        ],
+        [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
@@ -73,6 +77,9 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
+        ],
+        [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
@@ -85,6 +92,9 @@ def stream_markup(_, chat_id):
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     buttons = [
+        [
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
+        ],
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
@@ -116,6 +126,9 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
 def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
     query = f"{query[:20]}"
     buttons = [
+        [
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
+        ],
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
