@@ -6,22 +6,22 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "27843759"))
-API_HASH = getenv("API_HASH", "3d221e95ddabbc281a0347698584e0aa")
-BOT_TOKEN = getenv("BOT_TOKEN", "6633457166:AAHfSwVzbE_tuhh9Jkf_OZP9ACGGijRAEns")
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
-LOGGER_ID = int(getenv("LOGGER_ID", "-1001881565361"))
+LOGGER_ID = int(getenv("LOGGER_ID", ""))
 OWNER_ID = int(getenv("OWNER_ID", 5931622575))
-SAHİB= getenv("SAHİB", "https://t.me/Cankabusunefendisi")
+SAHİB= getenv("SAHİB", "https://t.me/")
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/AHMET1346z/Sonsuz",
+    "",
 )
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/BotsDuyuru")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/BotsDestek")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/")
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-STRING1 = getenv("STRING_SESSION", "BABQqIHNl2BcmuWL7_F8kuh2cC-orute2-6DmO_HVanTsu2tf7OO8HVUSoCbvXhBSXx1luSx7T5IjzCpbbWHHLuCgY2jeBYyXAcCvXHJYvqQ-gVhn7uaMEZbNLG5ymrV1LXueY9CgUbxvg32ZhXJxgQIrCtRz0Eck5LrGnuljwzrwtmEoLgBjiCqJa85nULJ-oLCfoaKm1uR8zScECCBcjcHc_YfkDVHe9TmK6P6_Gy0G1Bu7PLxrV8OvqXbc9DYlIxftbVOBJQ9r_MnSPYj_KqAxo7Xs1wx-IOARHuQPuvBvs_K-2ZE9uwcaJIH4mPTAG9b9i0wPvZsxggBFF5VY2uLAAAAAaR10EAA")
+STRING1 = getenv("STRING_SESSION", "")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
