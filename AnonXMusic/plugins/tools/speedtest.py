@@ -25,7 +25,7 @@ def testspeed(m, _):
     return result
 
 
-@app.on_message(filters.command(["hiztest"]) & SUDOERS)
+@app.on_message(filters.command(["bdndkd"]) & SUDOERS)
 @language
 async def speedtest_function(client, message: Message, _):
     m = await message.reply_text(_["server_11"])
