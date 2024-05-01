@@ -41,8 +41,6 @@
 
 - /aktifvideo - Aktif videolu sohbetleri görün !
 
-- /hiztest - Botun hızını test edin !
-
 - /istatistik - Botun İstatistiklerine Göz Atın .
 
 - /ping - Botun pingine göz atın !
