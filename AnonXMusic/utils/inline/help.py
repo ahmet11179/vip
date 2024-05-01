@@ -18,12 +18,6 @@ def help_pannel(_, START: Union[bool, int] = None):
         [
             [
                 InlineKeyboardButton(
-                    text=_["S_B_3"],
-                    url=f"https://t.me/{app.username}?startgroup=true",
-                )
-            ],
-            [
-                InlineKeyboardButton(
                     text=_["H_B_1"],
                     callback_data="help_callback hb1",
                 ),
@@ -31,10 +25,6 @@ def help_pannel(_, START: Union[bool, int] = None):
                     text=_["H_B_2"],
                     callback_data="help_callback hb2",
                 ),
-            ],
-            [
-                 InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
-                 InlineKeyboardButton(text="✚  ᴋᴀʏɴᴀᴋ ᴋᴏᴅᴜ  ", url="https://www.youtube.com/@EpikTv87"),
             ],
             mark,
         ]
@@ -63,7 +53,6 @@ def private_help_panel(_):
                 text=_["S_B_4"],
                 url=f"https://t.me/{app.username}?start=help",
             ),
-            InlineKeyboardButton(text="✚ ᴋᴀʏɴᴀᴋ ᴋᴏᴅᴜ ✚", url="https://www.youtube.com/@EpikTv87"),
         ],
     ]
     return buttons
