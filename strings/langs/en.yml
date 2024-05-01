@@ -213,8 +213,8 @@ ST_B_13 : "Resmi emirler ➜"
 ST_B_14 : "Çalışma türü ➜"
 
 SA_B_1 : "Genel istatistikler"
-SA_B_2 : "Genel"
-SA_B_3 : "Genel"
+SA_B_2 : "Bilgi"
+SA_B_3 : "İstatistik"
 
 QU_B_1 : "Bekleme listesi"
 QU_B_2 : " {0} —————————— {1}"
