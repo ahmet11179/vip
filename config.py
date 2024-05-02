@@ -6,22 +6,22 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH", "")
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+API_ID = int(getenv("API_ID", "")) #ASİSTAN APİ İD
+API_HASH = getenv("API_HASH", "") #ASİSTAN APİ HASH
+BOT_TOKEN = getenv("BOT_TOKEN", "") #BOT TOKEN
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
-LOGGER_ID = int(getenv("LOGGER_ID", ""))
-OWNER_ID = int(getenv("OWNER_ID", 5931622575))
-SAHİB= getenv("SAHİB", "https://t.me/")
+LOGGER_ID = int(getenv("LOGGER_ID", "")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
+OWNER_ID = int(getenv("OWNER_ID", 5931622575)) #OWNER İD
+SAHİB= getenv("SAHİB", "https://t.me/") #OWNER KULLANICI ADI 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "",
+    "https://github.com/AHMET1346z/Sonsuz", #REPO LİNKİ
 )
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/") #DESTEK KANALI LİNKİ
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/") #DESTEK GRUBU LİNKİ
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-STRING1 = getenv("STRING_SESSION", "")
+STRING1 = getenv("STRING_SESSION", "") #ASİSTAN SESSİON
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -55,10 +55,10 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/bc95d836250517b8a345d.jpg"
+    "START_IMG_URL", "https://telegra.ph/file/b79290e357a600dc3ab43.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg"
+    "PING_IMG_URL", "https://telegra.ph/file/b79290e357a600dc3ab43.jpg"
 )
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
 STATS_IMG_URL = "https://te.legra.ph/file/e906c2def5afe8a9b9120.jpg"
