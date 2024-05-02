@@ -6,22 +6,22 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "")) #ASİSTAN APİ İD
-API_HASH = getenv("API_HASH", "") #ASİSTAN APİ HASH
-BOT_TOKEN = getenv("BOT_TOKEN", "") #BOT TOKEN
+API_ID = int(getenv("API_ID", "25891829")) #ASİSTAN APİ İD
+API_HASH = getenv("API_HASH", "86ae507ce3fac59aba36a83d54794c09") #ASİSTAN APİ HASH
+BOT_TOKEN = getenv("BOT_TOKEN", "6659155018:AAHowXmimyzMDuxEyRB4NEByEcJ0oPaq7gw") #BOT TOKEN
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
-LOGGER_ID = int(getenv("LOGGER_ID", "")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
-OWNER_ID = int(getenv("OWNER_ID", 5931622575)) #OWNER İD
-SAHİB= getenv("SAHİB", "https://t.me/") #OWNER KULLANICI ADI 
+LOGGER_ID = int(getenv("LOGGER_ID", "-1002085023075")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
+OWNER_ID = int(getenv("OWNER_ID", 6437967819)) #OWNER İD
+SAHİB= getenv("SAHİB", "https://t.me/Cankabusunefendisi") #OWNER KULLANICI ADI 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/AHMET1346z/Sonsuz", #REPO LİNKİ
 )
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/") #DESTEK KANALI LİNKİ
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/") #DESTEK GRUBU LİNKİ
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzsohbet") #DESTEK KANALI LİNKİ
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzsohbet") #DESTEK GRUBU LİNKİ
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-STRING1 = getenv("STRING_SESSION", "") #ASİSTAN SESSİON
+STRING1 = getenv("STRING_SESSION", "BADC13pa4SV9G7BHsma1cSzBQtS-9yJp7m9k6pSSYvQgT9WLrb8Bn4P3gsII8TKvjNd8ps6939-gIP8Ac50_F_rEWD_F8ZIHxYLZT8Fu2QUyQZIzhtgH90265QKsDqJ1VVfreMPaLeClJn67flZQcBY9h4eSjpHKX6OP3kfx0lc6VcUNnMJbyNQNrTxXzGajVLUlnWRvDbL9egb7KOSNdH9KX7vbHvwY3z-6H4YB8ocl-uRLE0Vgl-gC9qo4CnZuf-N6yBD2Bq_zHfhR4TopoGgtIwXLfAL6cYReiKao2IzPJ0HmN3EeSsGKrf5AGnlww-MNKjJGTRKhtL04DeXH-tqmAAAAAZM1UmYA") #ASİSTAN SESSİON
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
