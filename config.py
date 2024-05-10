@@ -6,8 +6,8 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "28936837")) #ASİSTAN APİ İD
-API_HASH = getenv("API_HASH", "43d48a48afc6bd9274b33331d4db6571") #ASİSTAN APİ HASH
+API_ID = int(getenv("API_ID", "25891829")) #ASİSTAN APİ İD
+API_HASH = getenv("API_HASH", "86ae507ce3fac59aba36a83d54794c09") #ASİSTAN APİ HASH
 BOT_TOKEN = getenv("BOT_TOKEN", "7152038722:AAH6EnYKUdYHSBkpJ3FUYYEyAmjqu3OC9Fs") #BOT TOKEN
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
@@ -21,7 +21,7 @@ UPSTREAM_REPO = getenv(
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzsohbet") #DESTEK KANALI LİNKİ
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzsohbet") #DESTEK GRUBU LİNKİ
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-STRING1 = getenv("STRING_SESSION", "BACyKdyCS8sgrZnOyAg7yryHY-qf6Soso2fZym7YoikVYYlPTz2y688WLy11F_R2hw5hszp-HwENlGlgqPBa1ISAhCzGV-gVc86IXIR_XjMZ23qPi7kz53tqoFgsH3NKXyGSgiF2oENup8_C0iaH8y1hg5xXtUv5ebJPacjOlKQl8HQ_CzU2jzPbTweHPo7Or-0ZwH00xLWtT7jZgJF-cwVcaSSt6T2s9u0RgZsbdFw_NDM5HnaR-03rTyR0oNl8rPBhAkwEed_eBy6XUY7rvnasrNDPkdvIxm74Te3l-FsEHOgsr4AqXQQPG5cKq4BFDTe6MUTStWvq1FCt_akcBx2FAAAAAYQFCX8A") #ASİSTAN SESSİON
+STRING1 = getenv("STRING_SESSION", "BAB1lEQjjOmh0A8VkBGvNaxD9oaObDyemQgJpMVoDB1xXGcWvyN-xSuayheKXdQRKhtH0lFVQL_XJfkH_G1KrR1Z-IVQU7XF-d5iUc9_HFJ9lhT8V7-vzP_rz5I9SazOrmmyJpaE3KIe67WGXdjYrmgn-thPJ7x80DbtdkZ020_BNfPW5XTN99iMlEnZigbo_HS_zvOxj8CGUH3zJhKnH7NDlWDBeuzfiVjb3KLJjq5DV2DsmgFsyoREjAreabMtxEK2Aq5aRw3yt7l6Qsx4dR7eC5rfJ0EjHN9p-zQKUsM5kXR6cXyQmm4qjEFDUgvireXWj6l-j0aYxbXA8CGJ85BQAAAAAZM1UmYA") #ASİSTAN SESSİON
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
