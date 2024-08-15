@@ -18,8 +18,8 @@ UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/AHMET1346z/Sonsuz", #REPO LİNKİ
 )
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzsohbet") #DESTEK KANALI LİNKİ
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzsohbet") #DESTEK GRUBU LİNKİ
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzduyuru") #DESTEK KANALI LİNKİ
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzmuzikdestek") #DESTEK GRUBU LİNKİ
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 STRING1 = getenv("STRING_SESSION", "BAHHpwsAfK56UrOn60nsqG-d6YaDcfPk-1_7Qm2bjsGixUbnSpo4PL0oFBo52JmbQBirwHnwXh2Ixumac2-MYfTN_YxwL61nyaSUYUDK_BpDA2236OytyoQwb4xDLsf4C1Gg5Jbg38FhME2eROHFCNRtxp09wAVaELXcG2whAArHBDNqCvVcZrwpMB3ULZ1IHN0o3Mf-A8LCxEPjW-RkISCNPH8HFfExlpescH2OXmu06pMtvhu7s1goDRv4m7er1qMKWNM7t-iRYevIayYAb9uSoyHsL3-_OH0yLLCJmJFsz30Ef_LLRYkF_AD_ZMSJy7CvRaPBcLpMow3I308wQoqWqMc0bgAAAAG1u3TuAA") #ASİSTAN SESSİON
 STRING2 = getenv("STRING_SESSION2", None)
