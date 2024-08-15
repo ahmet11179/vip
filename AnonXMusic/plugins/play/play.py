@@ -188,7 +188,7 @@ async def play_commnd(
             spotify = True
             if not config.SPOTIFY_CLIENT_ID and not config.SPOTIFY_CLIENT_SECRET:
                 return await mystic.edit_text(
-                    "➻ 𝖲𝗉𝗈𝗍𝗂𝖿𝗒 𝗈̈𝗓𝖾𝗅𝗅𝗂𝗀̆𝗂 𝖽𝖾𝗌𝗍𝖾𝗄𝗅𝖾𝗇𝗆𝗂𝗒𝗈𝗋 .\n𝖫𝗎̈𝗍𝖿𝖾𝗇 𝖽𝖺𝗁𝖺 𝗌𝗈𝗇𝗋𝖺 𝗍𝖾𝗄𝗋𝖺𝗋 𝖽𝖾𝗇𝖾𝗒𝗂𝗇 :-)"
+                    "» sᴘᴏᴛɪғʏ ɪs ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ ʏᴇᴛ.\n\nᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ."
                 )
             if "track" in url:
                 try:
@@ -505,7 +505,7 @@ async def play_music(client, CallbackQuery, _):
 async def anonymous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
-            "» 𝖲̧𝗎 𝖠𝖽ı𝗆𝗅𝖺𝗋ı 𝖳𝖺𝗄𝗂𝗉 𝖤𝖽𝗂𝗇 !\n\n➻ 𝖦𝗋𝗎𝗉 𝖺𝗒𝖺𝗋𝗅𝖺𝗋ı𝗇𝖺 𝗀𝗂𝖽𝗂𝗇 .\n➻ 𝖸𝗈̈𝗇𝖾𝗍𝗂𝖼𝗂𝗅𝖾𝗋 𝖻𝗈̈𝗅𝗎̈𝗆𝗎̈𝗇𝖾 𝗀𝗂𝗋𝗂𝗇 .\n➻ 𝗂𝗌𝗆𝗂𝗇𝗂𝗓𝖾 𝗍ı𝗄𝗅𝖺𝗒ı𝗇 .\n➻ (𝖠𝗇𝗈𝗇𝗂𝗆 𝗄𝖺𝗅) 𝗒𝖾𝗍𝗄𝗂𝗌𝗂𝗇𝗂 𝗄𝖺𝗉𝖺𝗍ı𝗇 .",
+            "» ʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ :\n\nᴏᴘᴇɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ sᴇᴛᴛɪɴɢs.\n-> ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀs\n-> ᴄʟɪᴄᴋ ᴏɴ ʏᴏᴜʀ ɴᴀᴍᴇ\n-> ᴜɴᴄʜᴇᴄᴋ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ ᴘᴇʀᴍɪssɪᴏɴs.",
             show_alert=True,
         )
     except:
