@@ -9,19 +9,22 @@ load_dotenv()
 API_ID = int(getenv("API_ID", "25891829")) #ASİSTAN APİ İD
 API_HASH = getenv("API_HASH", "86ae507ce3fac59aba36a83d54794c09") #ASİSTAN APİ HASH
 BOT_TOKEN = getenv("BOT_TOKEN", "6659155018:AAF-8PgkOXxn3WG-Vk5mvfiJGkbOiU9_9ao") #BOT TOKEN
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://ahmetcanyaman495:ahmetcanyaman495@cluster0.4ltto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002085023075")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
 OWNER_ID = int(getenv("OWNER_ID", 6437967819)) #OWNER İD
 SAHİB= getenv("SAHİB", "https://t.me/Cankabusunefendisi") #OWNER KULLANICI ADI 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/AHMET1346z/Sonsuz", #REPO LİNKİ
+    "https://github.com/AHMET1346z/ddddddddddddddddd", #REPO LİNKİ
 )
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzduyuru") #DESTEK KANALI LİNKİ
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzmuzikdestek") #DESTEK GRUBU LİNKİ
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-STRING1 = getenv("STRING_SESSION", "BAHHpwsAfK56UrOn60nsqG-d6YaDcfPk-1_7Qm2bjsGixUbnSpo4PL0oFBo52JmbQBirwHnwXh2Ixumac2-MYfTN_YxwL61nyaSUYUDK_BpDA2236OytyoQwb4xDLsf4C1Gg5Jbg38FhME2eROHFCNRtxp09wAVaELXcG2whAArHBDNqCvVcZrwpMB3ULZ1IHN0o3Mf-A8LCxEPjW-RkISCNPH8HFfExlpescH2OXmu06pMtvhu7s1goDRv4m7er1qMKWNM7t-iRYevIayYAb9uSoyHsL3-_OH0yLLCJmJFsz30Ef_LLRYkF_AD_ZMSJy7CvRaPBcLpMow3I308wQoqWqMc0bgAAAAG1u3TuAA") #ASİSTAN SESSİON
+AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "9000"))
+SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "9999999"))
+SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "9999999"))
+STRING1 = getenv("STRING_SESSION", "BAHHpwsAFWI4AhorT-RCQBGRHjfZwZO62USO-5ZtAOTwox5RmgDFtizQGtPdYtqu3OI_YvpYRmg-ykOwuad2Z7SpffEUFtQv49tTTxOvzAtE5xDXrIwzLZx30EyhBA2YZpwtTbk0elVKNKATjl_O1fH_piC0nRQS88QpIfDkrZl-CwZtm4kH_kT-LYLWKiQTnZkFan5EehE8rjy8caMS5ChcE9Q9uw4ERzai7SMO0mtf6OdSOv2UkSlxllAb1tLlSK9EFFPU-NbRmyXl1d3G2WR_UWXTW3y38ycDuiC48X5jEzslgB7weiMojtQmhgVeVM4-B7_B1RQDUL9j8y4tc1nnCBcwIAAAAAG1u3TuAA") #ASİSTAN SESSİON
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -78,16 +81,3 @@ def time_to_seconds(time):
 
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
-
-
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
-        )
-
-if SUPPORT_CHAT:
-    if not re.match("(?:http|https)://", SUPPORT_CHAT):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-        )
