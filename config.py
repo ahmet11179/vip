@@ -6,10 +6,10 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "25891829")) #ASİSTAN APİ İD
-API_HASH = getenv("API_HASH", "86ae507ce3fac59aba36a83d54794c09") #ASİSTAN APİ HASH
+API_ID = int(getenv("API_ID", "21763340")) #ASİSTAN APİ İD
+API_HASH = getenv("API_HASH", "fd495447e3ed89e2417db1cceff7e351") #ASİSTAN APİ HASH
 BOT_TOKEN = getenv("BOT_TOKEN", "6659155018:AAG_1hQX3jGPpsoVtT3zRoICftOqtcfAoj0") #BOT TOKEN
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://ahmetcanyaman495:ahmetcanyaman495@cluster0.4ltto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002085023075")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
 OWNER_ID = int(getenv("OWNER_ID", 6437967819)) #OWNER İD
