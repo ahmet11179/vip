@@ -6,17 +6,17 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "26400244")) #ASİSTAN APİ İD
-API_HASH = getenv("API_HASH", "5e69daaa3668a56fe9b72319b280c071") #ASİSTAN APİ HASH
-BOT_TOKEN = getenv("BOT_TOKEN", "7535775173:AAHvPT0bbtr53hE3s5AYtbq2_argrNzpj3Q") #BOT TOKEN
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://ahmetcanyaman495:ahmetcanyaman495@cluster0.4ltto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+API_ID = int(getenv("API_ID", "21763340")) #ASİSTAN APİ İD
+API_HASH = getenv("API_HASH", "fd495447e3ed89e2417db1cceff7e351") #ASİSTAN APİ HASH
+BOT_TOKEN = getenv("BOT_TOKEN", "6659155018:AAG_1hQX3jGPpsoVtT3zRoICftOqtcfAoj0") #BOT TOKEN
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002085023075")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
 OWNER_ID = int(getenv("OWNER_ID", 6437967819)) #OWNER İD
 SAHİB= getenv("SAHİB", "https://t.me/Cankabusunefendisi") #OWNER KULLANICI ADI 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/AHMET1346z/kabus", #REPO LİNKİ
+    "https://github.com/AHMET1346z/Sonsuz.git", #REPO LİNKİ
 )
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzduyuru") #DESTEK KANALI LİNKİ
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzmuzikdestek") #DESTEK GRUBU LİNKİ
@@ -24,7 +24,7 @@ AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "9000"))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "9999999"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "9999999"))
-STRING1 = getenv("STRING_SESSION", "BAHHpwsAM_15li1oinBDHjxZSoDd5ITgDuD6nCIgw7tcAxzm6ySlUmznnqS4tWR2KOks9ypPP3jR602ylSRuwIq1AXvEURb584pK2mvTk5vrVdvJSgMKCqcg9XtilXn6RiMpxW0AjQlDB70IjG7kC8q6LEe3KOBKHQmnWZ0PR-fMhQvSfIikK37z5hGaaYUZXWCgTsiNnwgawU8ZOg9rns2zSQSpSTZ5A0zhlZccbWey4dAdMqa-oyuo5CizcWgR7EM8IpnwGeLCA_jcwMEUwY_3uPcouagEaCGoqpt5W7NnhUKBh3arVnk2ZaYyptME-OUqRha7xkhNegjhQdoKuBmao-Y4jgAAAAGHr-5HAA") #ASİSTAN SESSİON
+STRING1 = getenv("STRING_SESSION", "BAHHpwsAFWI4AhorT-RCQBGRHjfZwZO62USO-5ZtAOTwox5RmgDFtizQGtPdYtqu3OI_YvpYRmg-ykOwuad2Z7SpffEUFtQv49tTTxOvzAtE5xDXrIwzLZx30EyhBA2YZpwtTbk0elVKNKATjl_O1fH_piC0nRQS88QpIfDkrZl-CwZtm4kH_kT-LYLWKiQTnZkFan5EehE8rjy8caMS5ChcE9Q9uw4ERzai7SMO0mtf6OdSOv2UkSlxllAb1tLlSK9EFFPU-NbRmyXl1d3G2WR_UWXTW3y38ycDuiC48X5jEzslgB7weiMojtQmhgVeVM4-B7_B1RQDUL9j8y4tc1nnCBcwIAAAAAG1u3TuAA") #ASİSTAN SESSİON
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
