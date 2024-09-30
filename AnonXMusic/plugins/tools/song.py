@@ -193,27 +193,28 @@ async def song_download_cb(client, CallbackQuery, _):
     stype, format_id, vidid = callback_request.split("|")
     yturl = f"https://www.youtube.com/watch?v={vidid}"
     thumb_image_path = await CallbackQuery.message.download()
+
     with yt_dlp.YoutubeDL({"quiet": True}) as ytdl:
         x = ytdl.extract_info(yturl, download=False)
     
     title = (x["title"]).title()  # Orijinal başlık
     duration = x["duration"]
-    # Mesajınızı burada belirtiyoruz
     thank_you_message = "Sonsuz Müzik kullandığınız için teşekkür ederiz! @sonsuzmuzikbot ile her anınızda müziğin ve filmin tadını çıkarın."
+    
     if stype == "video":
         try:
             file_path = await YouTube.download(
                 yturl,
-                None,  # mystic yerine None kullandım
+                None,
                 songvideo=True,
                 format_id=format_id,
-                title=title,  # Orijinal başlık
+                title=title,
             )
             med = InputMediaVideo(
                 media=file_path,
                 duration=duration,
                 thumb=thumb_image_path,
-                caption=thank_you_message,  # Burada mesajınızı ekliyoruz
+                caption=thank_you_message,
                 supports_streaming=True,
             )
         except Exception as e:
@@ -231,24 +232,26 @@ async def song_download_cb(client, CallbackQuery, _):
             return await CallbackQuery.edit_message_text(_["song_10"])
         
         os.remove(file_path)
+        
     elif stype == "audio":
         try:
             filename = await YouTube.download(
                 yturl,
-                None,  # mystic yerine None kullandım
+                None,
                 songaudio=True,
                 format_id=format_id,
-                title=title,  # Orijinal başlık
+                title=title,
             )
             med = InputMediaAudio(
                 media=filename,
-                caption=thank_you_message,  # Burada mesajınızı ekliyoruz
+                caption=thank_you_message,
                 thumb=thumb_image_path,
-                title=title,  # Orijinal başlık
-                performer="@sonsuzmuzikbot",  # Sanatçı adı olarak kullanıcı adını ekledim
+                title=title,
+                performer="@sonsuzmuzikbot",
             )
         except Exception as e:
             return await CallbackQuery.edit_message_text(_["song_9"].format(e))
+        
         await app.send_chat_action(
             chat_id=CallbackQuery.message.chat.id,
             action=ChatAction.UPLOAD_AUDIO,
