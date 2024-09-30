@@ -8,11 +8,8 @@ import yt_dlp
 from urllib.parse import urlparse
 from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
-<<<<<<< HEAD
-from AnonXMusic import app, YouTube
-=======
 from AnonXMusic  import app, YouTube
->>>>>>> cbf2540a68266ee1b6bfd1e4a715cc2495511432
+
 from pyrogram import filters
 from pyrogram import Client, filters
 from pyrogram.types import Message
