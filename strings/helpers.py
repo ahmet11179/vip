@@ -18,6 +18,13 @@ HELP_1 = """
 » /ytver > 𝖪𝗎𝗅𝗅𝖺𝗇ı𝖼ı𝗒𝖺 𝖸𝖾𝗍𝗄𝗂 𝖵𝖾𝗋𝗂𝗋 .
 » /ytal > 𝖪𝗎𝗅𝗅𝖺𝗇ı𝖼ı 𝖸𝖾𝗍𝗄𝗂𝗌𝗂𝗇𝗂 𝖠𝗅ı𝗋 .
 » /ytlist > 𝖸𝖾𝗍𝗄𝗂𝗅𝗂 𝖪𝗎𝗅𝗅𝖺𝗇ı𝖼ı𝗅𝖺𝗋ı 𝖦𝗈‌𝗌𝗍𝖾𝗋𝗂𝗋 .
+» /muzik > mzüik indirir .
+» /zar > Zar 🎲 .
+» /dart > Dart 🎯 .
+» /basket > Basketbol 🏀 .
+» /Bowling > Bowling 🎳 .
+» /football > Futbol ⚽ .
+» /sulot > Slot makinesi döndür 🎰 .
 
 ~ 𝖭𝗈𝗍 : 𝖠𝗌‌𝖺𝗀‌ı𝖽𝖺𝗄𝗂 𝗄𝗈𝗆𝗎𝗍𝗅𝖺𝗋 𝗌𝖺𝗒𝖾𝗌𝗂𝗇𝖽𝖾 𝗀𝗋𝗎𝖻𝗎𝗇𝗎𝗓𝖽𝖺𝗄𝗂 𝗄𝗎𝗅𝗅𝖺𝗇ı𝖼ı𝗅𝖺𝗋, 𝗒𝗈‌𝗇𝖾𝗍𝗂𝖼𝗂 𝗈𝗅𝗆𝖺𝖽𝖺𝗇 𝖽𝖺 [ 𝗈𝗒𝗇𝖺𝗍, 𝖽𝗎𝗋𝖽𝗎𝗋, 𝖽𝖾𝗏𝖺𝗆, 𝖺𝗍𝗅𝖺, 𝗌𝗈𝗇 𝗏𝖻. ] 𝗄𝗈𝗆𝗎𝗍𝗅𝖺𝗋ı𝗇ı 𝗄𝗎𝗅𝗅𝖺𝗇𝖺𝖻𝗂𝗅𝗂𝗋 !
 [ /ytver , /ytal , /ytlist ]
