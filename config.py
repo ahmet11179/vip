@@ -16,7 +16,7 @@ OWNER_ID = int(getenv("OWNER_ID", 6437967819)) #OWNER İD
 SAHİB= getenv("SAHİB", "https://t.me/Cankabusunefendisi") #OWNER KULLANICI ADI 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/AHMET1346z/Sonsuz.git", #REPO LİNKİ
+    "https://github.com/AHMET1346z/karars-z", #REPO LİNKİ
 )
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/sonsuzduyuru") #DESTEK KANALI LİNKİ
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sonsuzmuzikdestek") #DESTEK GRUBU LİNKİ
