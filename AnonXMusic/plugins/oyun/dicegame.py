@@ -1,6 +1,6 @@
 from pyrogram import Client, enums, filters
 import asyncio
-from DAXXMUSIC import app as app
+from AnonXMusic import app as app
 
 @app.on_message(filters.command("zar"))
 async def dice(bot, message):
