@@ -25,8 +25,10 @@ from config import (BANNED_USERS, SONG_DOWNLOAD_DURATION,
 from AnonXMusic.utils.decorators.language import language, languageCB
 from AnonXMusic.utils.formatters import convert_bytes
 from AnonXMusic.utils.inline.song import song_markup
+
 # Command
 SONG_COMMAND = ["muzik"]
+
 @app.on_message(
     filters.command(SONG_COMMAND) & filters.group & ~BANNED_USERS
 )
@@ -43,6 +45,7 @@ async def song_command_group(client, message: Message, _):
         ]
     )
     await message.reply_text(_["song_1"], reply_markup=upl)
+
 # Song Module
 @app.on_message(
     filters.command(SONG_COMMAND) & filters.private & ~BANNED_USERS
@@ -87,6 +90,7 @@ async def song_command_private(client, message: Message, _):
         caption=_["song_4"].format(title),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
+
 @app.on_callback_query(
     filters.regex(pattern=r"song_back") & ~BANNED_USERS
 )
@@ -99,6 +103,7 @@ async def songs_back_helper(client, CallbackQuery, _):
     return await CallbackQuery.edit_message_reply_markup(
         reply_markup=InlineKeyboardMarkup(buttons)
     )
+
 @app.on_callback_query(
     filters.regex(pattern=r"song_helper") & ~BANNED_USERS
 )
@@ -176,6 +181,7 @@ async def song_helper_cb(client, CallbackQuery, _):
         return await CallbackQuery.edit_message_reply_markup(
             reply_markup=keyboard
         )
+
 # Downloading Songs Here
 from config import SUPPORT_CHAT  # config dosyasından SUPPORT_CHAT'ı içe aktar
 @app.on_callback_query(
@@ -193,28 +199,27 @@ async def song_download_cb(client, CallbackQuery, _):
     stype, format_id, vidid = callback_request.split("|")
     yturl = f"https://www.youtube.com/watch?v={vidid}"
     thumb_image_path = await CallbackQuery.message.download()
-
     with yt_dlp.YoutubeDL({"quiet": True}) as ytdl:
         x = ytdl.extract_info(yturl, download=False)
     
     title = (x["title"]).title()  # Orijinal başlık
     duration = x["duration"]
+    # Mesajınızı burada belirtiyoruz
     thank_you_message = "Sonsuz Müzik kullandığınız için teşekkür ederiz! @sonsuzmuzikbot ile her anınızda müziğin ve filmin tadını çıkarın."
-    
     if stype == "video":
         try:
             file_path = await YouTube.download(
                 yturl,
-                None,
+                None,  # mystic yerine None kullandım
                 songvideo=True,
                 format_id=format_id,
-                title=title,
+                title=title,  # Orijinal başlık
             )
             med = InputMediaVideo(
                 media=file_path,
                 duration=duration,
                 thumb=thumb_image_path,
-                caption=thank_you_message,
+                caption=thank_you_message,  # Burada mesajınızı ekliyoruz
                 supports_streaming=True,
             )
         except Exception as e:
@@ -232,22 +237,21 @@ async def song_download_cb(client, CallbackQuery, _):
             return await CallbackQuery.edit_message_text(_["song_10"])
         
         os.remove(file_path)
-        
     elif stype == "audio":
         try:
             filename = await YouTube.download(
                 yturl,
-                None,
+                None,  # mystic yerine None kullandım
                 songaudio=True,
                 format_id=format_id,
-                title=title,
+                title=title,  # Orijinal başlık
             )
             med = InputMediaAudio(
                 media=filename,
-                caption=thank_you_message,
+                caption=thank_you_message,  # Burada mesajınızı ekliyoruz
                 thumb=thumb_image_path,
-                title=title,
-                performer="@sonsuzmuzikbot",
+                title=title,  # Orijinal başlık
+                performer=_["song_11"],  # Şarkıcı ismini belirtiyoruz
             )
         except Exception as e:
             return await CallbackQuery.edit_message_text(_["song_9"].format(e))
@@ -264,3 +268,4 @@ async def song_download_cb(client, CallbackQuery, _):
             return await CallbackQuery.edit_message_text(_["song_10"])
         
         os.remove(filename)
+    os.remove(thumb_image_path)
