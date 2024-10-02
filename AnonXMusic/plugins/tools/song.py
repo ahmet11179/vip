@@ -277,7 +277,7 @@ async def song_download_cb(client, CallbackQuery, _):
                 caption=thank_you_message,  # Burada mesajınızı ekliyoruz
                 thumb=thumb_image_path,
                 title=title,  # Orijinal başlık
-                performer=_["@sonsuzmuzikbot"],  # Şarkıcı ismini belirtiyoruz
+                performer="@sonsuzmuzikbot",  # Şarkıcı ismini belirtiyoruz
             )
         except Exception as e:
             return await CallbackQuery.edit_message_text(_["song_9"].format(e))
