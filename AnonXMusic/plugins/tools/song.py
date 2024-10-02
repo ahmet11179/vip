@@ -27,7 +27,7 @@ from AnonXMusic.utils.formatters import convert_bytes
 from AnonXMusic.utils.inline.song import song_markup
 
 # Command
-SONG_COMMAND = ["muzik"]
+SONG_COMMAND = ["indir"]
 
 @app.on_message(
     filters.command(SONG_COMMAND) & filters.group & ~BANNED_USERS
