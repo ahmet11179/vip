@@ -19,7 +19,7 @@ async def play_logs(message, streamtype):
 <b>𝖪𝗎𝗅𝗅𝖺𝗇ı𝖼ı 𝖫𝗂𝗇𝗄𝗂 :</b> @{message.from_user.username}
 
 <b>𝖲𝗈𝗋𝗀𝗎 :</b> {message.text.split(None, 1)[1]}
-<b>𝖠𝗄ı𝗌‌ 𝖳𝗎‌𝗋𝗎‌ :</b> {streamtype}"""
+<b>𝖠𝗄ı𝗌̧ 𝖳𝗎̈𝗋𝗎̈ :</b> {streamtype}"""
         if message.chat.id != LOGGER_ID:
             try:
                 await app.send_message(
