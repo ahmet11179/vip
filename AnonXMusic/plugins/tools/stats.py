@@ -9,12 +9,17 @@ from pytgcalls.__version__ import __version__ as pytgver
 import config
 from AnonXMusic import app
 from AnonXMusic.core.userbot import assistants
-from AnonXMusic.misc import SUDOERS, mongodb
+from AnonXMusic.misc import SUDOERS
 from AnonXMusic.plugins import ALL_MODULES
 from AnonXMusic.utils.database import get_served_chats, get_served_users, get_sudoers
 from AnonXMusic.utils.decorators.language import language, languageCB
 from AnonXMusic.utils.inline.stats import back_stats_buttons, stats_buttons
 from config import BANNED_USERS
+from motor.motor_asyncio import AsyncIOMotorClient  # MongoDB için motor kullanıyoruz
+
+# MongoDB bağlantısını config'den çekiyoruz
+mongo_client = AsyncIOMotorClient(config.MONGO_DB_URI)
+mongodb = mongo_client["<database_name>"]  # MongoDB'de kullanacağınız veritabanı adı
 
 @app.on_message(filters.command(["istatistik"]) & filters.group & ~BANNED_USERS)
 @language
@@ -46,8 +51,8 @@ async def overall_stats(client, CallbackQuery, _):
         pass
 
     # Servis edilen sohbet ve kullanıcı sayısını düzgün almak için düzenlendi
-    served_chats = await mongodb.served_chats.count_documents({})  # Servis edilen sohbet sayısını alıyoruz
-    served_users = await mongodb.served_users.count_documents({})  # Servis edilen kullanıcı sayısını alıyoruz
+    served_chats = await mongodb["served_chats"].count_documents({})  # Servis edilen sohbet sayısını alıyoruz
+    served_users = await mongodb["served_users"].count_documents({})  # Servis edilen kullanıcı sayısını alıyoruz
 
     text = _["gstats_3"].format(
         app.mention,
@@ -105,8 +110,8 @@ async def bot_stats(client, CallbackQuery, _):
     collections = db_stats["collections"]
     objects = db_stats["objects"]
     
-    served_chats = await mongodb.served_chats.count_documents({})  # Servis edilen sohbet sayısı
-    served_users = await mongodb.served_users.count_documents({})  # Servis edilen kullanıcı sayısı
+    served_chats = await mongodb["served_chats"].count_documents({})  # Servis edilen sohbet sayısı
+    served_users = await mongodb["served_users"].count_documents({})  # Servis edilen kullanıcı sayısı
     
     text = _["gstats_5"].format(
         app.mention,
