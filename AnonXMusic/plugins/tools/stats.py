@@ -45,8 +45,9 @@ async def overall_stats(client, CallbackQuery, _):
     except:
         pass
 
-    served_chats = len(await get_served_chats())  # Servis edilen sohbet sayısını alıyoruz
-    served_users = len(await get_served_users())  # Servis edilen kullanıcı sayısını alıyoruz
+    # Servis edilen sohbet ve kullanıcı sayısını düzgün almak için düzenlendi
+    served_chats = await mongodb.served_chats.count_documents({})  # Servis edilen sohbet sayısını alıyoruz
+    served_users = await mongodb.served_users.count_documents({})  # Servis edilen kullanıcı sayısını alıyoruz
 
     text = _["gstats_3"].format(
         app.mention,
@@ -79,6 +80,7 @@ async def bot_stats(client, CallbackQuery, _):
     except:
         pass
     
+    # Sistem bilgilerini ve veritabanı bilgilerini çekiyoruz
     p_core = psutil.cpu_count(logical=False)
     t_core = psutil.cpu_count(logical=True)
     ram = str(round(psutil.virtual_memory().total / (1024.0 ** 3))) + " ɢʙ"
@@ -89,18 +91,22 @@ async def bot_stats(client, CallbackQuery, _):
         else:
             cpu_freq = f"{round(cpu_freq, 2)}ᴍʜᴢ"
     except:
-        cpu_freq = "𝗁𝖺𝗍𝖺"
-    
+        cpu_freq = "Hata"
+
     hdd = psutil.disk_usage("/")
     total = hdd.total / (1024.0 ** 3)
     used = hdd.used / (1024.0 ** 3)
     free = hdd.free / (1024.0 ** 3)
     
-    call = await mongodb.command("dbstats")
-    datasize = call["dataSize"] / 1024
-    storage = call["storageSize"] / 1024
-    served_chats = len(await get_served_chats())  # Servis edilen sohbet sayısını alıyoruz
-    served_users = len(await get_served_users())  # Servis edilen kullanıcı sayısını alıyoruz
+    # MongoDB'den veritabanı istatistiklerini alıyoruz
+    db_stats = await mongodb.command("dbstats")
+    datasize = db_stats["dataSize"] / (1024.0 ** 2)  # MB cinsinden veri boyutu
+    storage = db_stats["storageSize"] / (1024.0 ** 2)  # MB cinsinden depolama boyutu
+    collections = db_stats["collections"]
+    objects = db_stats["objects"]
+    
+    served_chats = await mongodb.served_chats.count_documents({})  # Servis edilen sohbet sayısı
+    served_users = await mongodb.served_users.count_documents({})  # Servis edilen kullanıcı sayısı
     
     text = _["gstats_5"].format(
         app.mention,
@@ -121,9 +127,9 @@ async def bot_stats(client, CallbackQuery, _):
         len(BANNED_USERS),
         len(await get_sudoers()),
         str(datasize)[:6],
-        storage,
-        call["collections"],
-        call["objects"],
+        str(storage)[:6],
+        collections,
+        objects,
     )
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
