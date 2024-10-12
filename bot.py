@@ -10,7 +10,7 @@ load_dotenv()
 API_ID = int(getenv("API_ID", "26400244"))
 API_HASH = getenv("API_HASH", "5e69daaa3668a56fe9b72319b280c071")
 BOT_TOKEN = getenv("BOT_TOKEN", "6659155018:AAHLnw8kM2s_HIM47WULqRk6QfASe0V-NJo")
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://ahmetcanyaman495:ahmetcanyaman495@cluster0.4ltto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://botmuzik654:muziks@cluster0.5ory5au.mongodb.net/?retryWrites=true&w=majority")
 
 # MongoDB bağlantısı
 mongo_client = MongoClient(MONGO_DB_URI)
