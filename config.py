@@ -11,7 +11,7 @@ API_HASH = getenv("API_HASH", "5e69daaa3668a56fe9b72319b280c071") #ASİSTAN APİ
 BOT_TOKEN = getenv("BOT_TOKEN", "7922147139:AAGaDkmCpHUa7Ry29bb0eefXIBIsqHAnNvI") #BOT TOKEN
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://sonsuzmango:sonsuz@sonsuz.plikp.mongodb.net/?retryWrites=true&w=majority&appName=Sonsuz")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002085023075")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
+LOGGER_ID = int(getenv("LOGGER_ID", "-1002292728756")) #LOG GRUBU İD'Sİ -100 İLE BAŞLAMALI
 OWNER_ID = int(getenv("OWNER_ID", 7730275029)) #OWNER İD
 SAHİB= getenv("SAHİB", "https://t.me/Cankabusower") #OWNER KULLANICI ADI 
 UPSTREAM_REPO = getenv(
