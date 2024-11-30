@@ -6,8 +6,8 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "26400244")) #ASİSTAN APİ İD
-API_HASH = getenv("API_HASH", "5e69daaa3668a56fe9b72319b280c071") #ASİSTAN APİ HASH
+API_ID = int(getenv("API_ID", "27606753")) #ASİSTAN APİ İD
+API_HASH = getenv("API_HASH", "b060babef6dd4a784ea36ac9a3387de1") #ASİSTAN APİ HASH
 BOT_TOKEN = getenv("BOT_TOKEN", "7922147139:AAGaDkmCpHUa7Ry29bb0eefXIBIsqHAnNvI") #BOT TOKEN
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://sonsuzmango:sonsuz@sonsuz.plikp.mongodb.net/?retryWrites=true&w=majority&appName=Sonsuz")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
