@@ -253,10 +253,7 @@ async def song_download_cb(client, CallbackQuery, _):
     title = (x["title"]).title()
     duration = x.get("duration", 0)
 
-    thank_you_message = (
-        "🎵 Sonsuz Müzik kullandığınız için teşekkür ederiz!\n"
-        "@sonsuzmuzik_bot ile müziğin ve filmlerin keyfini çıkarın."
-    )
+    thank_you_message = "Sonsuz Müzik kullandığınız için teşekkür ederiz! @sonsuzmuzik_bot ile her anınızda müziğin ve filmin tadını çıkarın."
 
     if stype == "video":
         try:
