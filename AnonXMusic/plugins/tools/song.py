@@ -208,18 +208,13 @@ async def song_helper_cb(client, CallbackQuery, _):
             reply_markup=keyboard
         )
 
-import yt_dlp
-from pyrogram.types import InputMediaAudio, InputMediaVideo, ChatAction
-from config import SUPPORT_CHAT
-
-# Çerez dosyasını otomatik bulmak için fonksiyon
+# Downloading Songs Here
+from config import SUPPORT_CHAT  # config dosyasından SUPPORT_CHAT'ı içe aktar
 def cookiefile():
     cookie_dir = "cookies"
     cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
-    if not cookies_files:
-        raise FileNotFoundError("Çerez dosyası bulunamadı. `cookies/` klasöründe .txt dosyası olmalı.")
-    return os.path.join(cookie_dir, cookies_files[0])
 
+    return os.path.join(cookie_dir, cookies_files[0])
 
 @app.on_callback_query(
     filters.regex(pattern=r"song_download") & ~BANNED_USERS
@@ -227,90 +222,82 @@ def cookiefile():
 @languageCB
 async def song_download_cb(client, CallbackQuery, _):
     try:
-        await CallbackQuery.answer("İndiriliyor...")
+        await CallbackQuery.answer("Downloading")
     except:
         pass
-
+        
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
     stype, format_id, vidid = callback_request.split("|")
     yturl = f"https://www.youtube.com/watch?v={vidid}"
     thumb_image_path = await CallbackQuery.message.download()
-
-    try:
-        ydl_opts = {
-            "quiet": True,
-            "cookiefile": cookiefile(),  # çerez dosyasını otomatik kullan
-        }
-        with yt_dlp.YoutubeDL(ydl_opts) as ytdl:
-            x = ytdl.extract_info(yturl, download=False)
-    except Exception as e:
-        os.remove(thumb_image_path)
-        return await CallbackQuery.edit_message_text(
-            f"❌ YouTube içeriği alınamadı.\nGiriş gerekebilir veya bot doğrulama istiyor.\n\n🛠 Hata:\n`{e}`"
-        )
-
-    title = (x["title"]).title()
-    duration = x.get("duration", 0)
-
+    with yt_dlp.YoutubeDL({"quiet": True}) as ytdl:
+        x = ytdl.extract_info(yturl, download=False)
+    
+    title = (x["title"]).title()  # Orijinal başlık
+    duration = x["duration"]
+    # Mesajınızı burada belirtiyoruz
     thank_you_message = "Sonsuz Müzik kullandığınız için teşekkür ederiz! @sonsuzmuzik_bot ile her anınızda müziğin ve filmin tadını çıkarın."
-
     if stype == "video":
         try:
             file_path = await YouTube.download(
-                yturl, None, songvideo=True, format_id=format_id, title=title
+                yturl,
+                None,  # mystic yerine None kullandım
+                songvideo=True,
+                format_id=format_id,
+                title=title,  # Orijinal başlık
             )
             med = InputMediaVideo(
                 media=file_path,
                 duration=duration,
                 thumb=thumb_image_path,
-                caption=thank_you_message,
+                caption=thank_you_message,  # Burada mesajınızı ekliyoruz
                 supports_streaming=True,
             )
         except Exception as e:
-            os.remove(thumb_image_path)
             return await CallbackQuery.edit_message_text(_["song_9"].format(e))
-
+        
         await app.send_chat_action(
             chat_id=CallbackQuery.message.chat.id,
             action=ChatAction.UPLOAD_VIDEO,
         )
-
+        
         try:
             await CallbackQuery.edit_message_media(media=med)
         except Exception as e:
             print(e)
-            await CallbackQuery.edit_message_text(_["song_10"])
-        finally:
-            os.remove(file_path)
-
+            return await CallbackQuery.edit_message_text(_["song_10"])
+        
+        os.remove(file_path)
     elif stype == "audio":
         try:
             filename = await YouTube.download(
-                yturl, None, songaudio=True, format_id=format_id, title=title
+                yturl,
+                None,  # mystic yerine None kullandım
+                songaudio=True,
+                format_id=format_id,
+                title=title,  # Orijinal başlık
             )
             med = InputMediaAudio(
                 media=filename,
-                caption=thank_you_message,
+                caption=thank_you_message,  # Burada mesajınızı ekliyoruz
                 thumb=thumb_image_path,
-                title=title,
-                performer="@sonsuzmuzik_bot",
+                title=title,  # Orijinal başlık
+                performer="@sonsuzmuzik_bot",  # Şarkıcı ismini belirtiyoruz
             )
         except Exception as e:
-            os.remove(thumb_image_path)
             return await CallbackQuery.edit_message_text(_["song_9"].format(e))
-
+        
         await app.send_chat_action(
             chat_id=CallbackQuery.message.chat.id,
             action=ChatAction.UPLOAD_AUDIO,
         )
-
+        
         try:
             await CallbackQuery.edit_message_media(media=med)
         except Exception as e:
             print(e)
-            await CallbackQuery.edit_message_text(_["song_10"])
-        finally:
-            os.remove(filename)
-
+            return await CallbackQuery.edit_message_text(_["song_10"])
+        
+        os.remove(filename)
     os.remove(thumb_image_path)
