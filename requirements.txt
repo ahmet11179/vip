@@ -28,5 +28,7 @@ TgCrypto
 unidecode
 werkzeug==3.0.6
 yt-dlp>=2025.4.30
+youtube-search
+youtube-search-python
 wget
 
