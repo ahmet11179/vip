@@ -210,6 +210,7 @@ async def song_helper_cb(client, CallbackQuery, _):
 
 # Downloading Songs Here
 from config import SUPPORT_CHAT  # config dosyasından SUPPORT_CHAT'ı içe aktar
+from typing import Union
 def cookiefile():
     cookie_dir = "cookies"
     cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
