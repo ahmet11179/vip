@@ -208,8 +208,19 @@ async def song_helper_cb(client, CallbackQuery, _):
             reply_markup=keyboard
         )
 
-# Downloading Songs Here
-from config import SUPPORT_CHAT  # config dosyasından SUPPORT_CHAT'ı içe aktar
+import yt_dlp
+from pyrogram.types import InputMediaAudio, InputMediaVideo, ChatAction
+from config import SUPPORT_CHAT
+
+# Çerez dosyasını otomatik bulmak için fonksiyon
+def cookiefile():
+    cookie_dir = "cookies"
+    cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
+    if not cookies_files:
+        raise FileNotFoundError("Çerez dosyası bulunamadı. `cookies/` klasöründe .txt dosyası olmalı.")
+    return os.path.join(cookie_dir, cookies_files[0])
+
+
 @app.on_callback_query(
     filters.regex(pattern=r"song_download") & ~BANNED_USERS
 )
@@ -226,20 +237,18 @@ async def song_download_cb(client, CallbackQuery, _):
     yturl = f"https://www.youtube.com/watch?v={vidid}"
     thumb_image_path = await CallbackQuery.message.download()
 
-    # yt-dlp çerez destekli ve hataya karşı korumalı kullanımı
     try:
         ydl_opts = {
-            'cookiefile': 'cookies.txt',
-            'quiet': True
+            "quiet": True,
+            "cookiefile": cookiefile(),  # çerez dosyasını otomatik kullan
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ytdl:
             x = ytdl.extract_info(yturl, download=False)
     except Exception as e:
-        await CallbackQuery.edit_message_text(
-            f"❌ YouTube videosuna erişilemedi. Giriş yapılması gerekebilir.\n\n🔧 Hata: `{str(e)}`"
-        )
         os.remove(thumb_image_path)
-        return
+        return await CallbackQuery.edit_message_text(
+            f"❌ YouTube içeriği alınamadı.\nGiriş gerekebilir veya bot doğrulama istiyor.\n\n🛠 Hata:\n`{e}`"
+        )
 
     title = (x["title"]).title()
     duration = x.get("duration", 0)
@@ -252,11 +261,7 @@ async def song_download_cb(client, CallbackQuery, _):
     if stype == "video":
         try:
             file_path = await YouTube.download(
-                yturl,
-                None,
-                songvideo=True,
-                format_id=format_id,
-                title=title,
+                yturl, None, songvideo=True, format_id=format_id, title=title
             )
             med = InputMediaVideo(
                 media=file_path,
@@ -285,11 +290,7 @@ async def song_download_cb(client, CallbackQuery, _):
     elif stype == "audio":
         try:
             filename = await YouTube.download(
-                yturl,
-                None,
-                songaudio=True,
-                format_id=format_id,
-                title=title,
+                yturl, None, songaudio=True, format_id=format_id, title=title
             )
             med = InputMediaAudio(
                 media=filename,
@@ -315,5 +316,4 @@ async def song_download_cb(client, CallbackQuery, _):
         finally:
             os.remove(filename)
 
-    # Ortak: Thumbnail dosyasını temizle
     os.remove(thumb_image_path)
