@@ -14,7 +14,7 @@ API_HASH = getenv("API_HASH", "62468ed2e52b7ddcf0c0f360ad4405c1") #ASİSTAN APİ
 
 EVAL = list(map(int, getenv("EVAL", "7716352578 7091230649").split()))
 # ------------------------------------------------------
-BOT_TOKEN = getenv("BOT_TOKEN", "7922147139:AAEIPV5YJbKL5nodzbtvuVOm7cb6INIuh5o") #BOT TOKEN
+BOT_TOKEN = getenv("BOT_TOKEN", "7423156732:AAFLnNI0V0m96zS1gQti2tgFR37g5gOsQio") #BOT TOKEN
 # -------------------------------------------------------
 OWNER_USERNAME = getenv("OWNER_USERNAME","Cankabusower")
 # --------------------------------------------------------
