@@ -295,3 +295,4 @@ async def song_download_cb(client, CallbackQuery, _):
         
         os.remove(filename)
     os.remove(thumb_image_path)
+    
